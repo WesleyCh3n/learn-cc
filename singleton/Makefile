@@ -17,10 +17,10 @@ TARGETS = $(PROGRAMS:.cc=)
 all: $(TARGETS)
 
 $(TARGETS): $(OBJECTS)
-	$(Q)$(CC) -o $@ $(CFLAGS) $(@:=.o)
+	$(Q)$(CC) -o $@ $(CFLAGS) $(OBJECTS) # $(@:=.o)
 
 %.o: %.cc
-	$(Q)$(CC) -c -o $@ $(INCLUDES) $(CFLAGS) $<
+	$(Q)$(CC) -c -o $(notdir $@) $(INCLUDES) $(CFLAGS) $<
 
 .PHONY: clean
 clean:

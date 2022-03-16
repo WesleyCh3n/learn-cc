@@ -19,12 +19,3 @@ private:
   MeyerSingleton() { cout << "MeyerSingleton contructor called!\n"; }
   ~MeyerSingleton() { cout << "MeyerSingleton destructor called!\n"; }
 };
-
-/* main function */
-int main(void) {
-  cout << "Main started!\n";
-  cout << "getInstance()    addr: " << &MeyerSingleton::getInstance() << '\n';
-  MeyerSingleton& s = MeyerSingleton::getInstance();
-  cout << "reference object addr: " << &s << '\n';
-  return 0;
-}

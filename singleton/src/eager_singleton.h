@@ -18,15 +18,3 @@ private:
   EagerSingleton() { cout << "EagerSingleton contructor called!\n"; }
   ~EagerSingleton() { cout << "EagerSingleton destructor called!\n"; }
 };
-
-/* class definition */
-EagerSingleton EagerSingleton::gInstance;
-
-/* main function */
-int main(void) {
-  cout << "Main started!\n";
-  cout << "getInstance()    addr: " << &EagerSingleton::getInstance() << '\n';
-  EagerSingleton& s = EagerSingleton::getInstance();
-  cout << "reference object addr: " << &s << '\n';
-  return 0;
-}
